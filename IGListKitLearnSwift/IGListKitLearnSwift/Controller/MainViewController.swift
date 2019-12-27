@@ -10,9 +10,8 @@ import UIKit
 import IGListKit
 
 
-final class MainViewController: BasicListViewController, ListController {
+final class MainViewController: BasicListViewController {
     // MARK: 属性
-    typealias Item = MainItem
     lazy var items: [MainItem] = [
         MainItem(title: "UICollectionView的使用", selectedAction: { (index) in
             let item = self.items[index]

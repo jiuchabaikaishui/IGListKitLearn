@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6EFA4C0123B5F02B00943616 /* TextCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA4C0023B5F02B00943616 /* TextCollectionReusableView.swift */; };
 		944CE7A401C9C110DAF909F5 /* Pods_IGListKitLearnSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE06E607B118F9B8BBF9458 /* Pods_IGListKitLearnSwift.framework */; };
 		ACDD7FBD23697F9800498834 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD7FBC23697F9800498834 /* AppDelegate.swift */; };
 		ACDD7FBF23697F9800498834 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD7FBE23697F9800498834 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		5FE06E607B118F9B8BBF9458 /* Pods_IGListKitLearnSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IGListKitLearnSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EFA4C0023B5F02B00943616 /* TextCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionReusableView.swift; sourceTree = "<group>"; };
 		ACDD7FB923697F9800498834 /* IGListKitLearnSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IGListKitLearnSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACDD7FBC23697F9800498834 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACDD7FBE23697F9800498834 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				ACDD807C236C12E900498834 /* BasicCollectionViewCell.swift */,
 				ACDD7FD6236ACEDC00498834 /* TextCollectionViewCell.swift */,
+				6EFA4C0023B5F02B00943616 /* TextCollectionReusableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				ACDD7FD5236AC96300498834 /* MainSectionController.swift in Sources */,
 				ACDD808E236C3C7C00498834 /* BasicSectionController.swift in Sources */,
 				ACDD8086236C2A1700498834 /* BasicItem.swift in Sources */,
+				6EFA4C0123B5F02B00943616 /* TextCollectionReusableView.swift in Sources */,
 				ACDD808C236C3AA000498834 /* BasicListViewController.swift in Sources */,
 				ACDD8088236C2A5900498834 /* MainItem.swift in Sources */,
 			);

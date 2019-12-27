@@ -9,11 +9,6 @@
 import UIKit
 import IGListKit
 
-protocol ListController {
-    associatedtype Item
-    var items: [Item] { get }
-}
-
 class BasicListViewController: BasicViewController, ListAdapterDataSource {
     // MARK: 属性
     lazy var adapter: ListAdapter = {

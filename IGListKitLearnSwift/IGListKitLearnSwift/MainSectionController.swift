@@ -10,7 +10,6 @@ import UIKit
 import IGListKit
 
 class MainSectionController: BasicSectionController {
-    typealias Item = MainItem
     var item: MainItem?
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {

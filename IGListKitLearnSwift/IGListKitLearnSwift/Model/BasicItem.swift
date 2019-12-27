@@ -12,11 +12,13 @@ import IGListKit
 class BasicItem: NSObject, ListDiffable {
     let line: Bool
     let arrow: Bool
+    let nextControllerClass: UIViewController.Type?
     let selectedAction: ((Int) -> ())?
     
-    init(line: Bool, arrow: Bool, selectedAction: ((Int) -> ())?) {
+    init(line: Bool = true, arrow: Bool = false, nextControllerClass: UIViewController.Type? = nil, selectedAction: ((Int) -> ())? = nil) {
         self.line = line
         self.arrow = arrow
+        self.nextControllerClass = nextControllerClass
         self.selectedAction = selectedAction
         
         super.init()

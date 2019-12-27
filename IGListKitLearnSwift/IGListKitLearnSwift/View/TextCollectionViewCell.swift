@@ -35,9 +35,9 @@ final class TextCollectionViewCell: BasicCollectionViewCell {
             make.left.equalTo(contentView).offset(15.0)
             make.top.equalTo(contentView)
             if hiddenNextLabel {
-                make.right.lessThanOrEqualTo(contentView).offset(-15.0)
+                make.right.equalTo(contentView).offset(-15.0)
             } else {
-                make.right.lessThanOrEqualTo(nextLabel.snp.left).offset(-15.0)
+                make.right.equalTo(nextLabel.snp.left).offset(-15.0)
             }
             if hiddenLine {
                 make.bottom.equalTo(contentView)

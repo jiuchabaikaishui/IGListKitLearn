@@ -11,12 +11,9 @@ import UIKit
 final class MainItem: BasicItem {
     let title: String?
     
-    convenience init(title: String, selectedAction: ((Int) -> ())?) {
-        self.init(title: title, line: true, arrow: true, selectedAction: selectedAction)
-    }
-    init(title: String, line: Bool = true, arrow: Bool = true, selectedAction: ((Int) -> ())? = nil) {
+    init(title: String, line: Bool = true, arrow: Bool = true, nextControllerClass: UIViewController.Type? = nil, selectedAction: ((Int) -> ())? = nil) {
         self.title = title
         
-        super.init(line: line, arrow: arrow, selectedAction: selectedAction)
+        super.init(line: line, arrow: arrow, nextControllerClass: nextControllerClass, selectedAction: selectedAction)
     }
 }

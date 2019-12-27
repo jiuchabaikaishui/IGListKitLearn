@@ -9,21 +9,15 @@
 import UIKit
 import IGListKit
 
-protocol ListSection {
-    associatedtype Item: ListDiffable
-    var item: Item? { get set }
-}
-
 class BasicSectionController: ListSectionController {
-    typealias Item = BasicItem
     private var item: BasicItem?
     
     override func sizeForItem(at index: Int) -> CGSize {
-        let h: CGFloat = 44.0
         guard let w = collectionContext?.containerSize.width else {
-            return CGSize(width: 0.0, height: h)
+            return CGSize(width: 0.0, height: 0.0)
         }
         
+        let h: CGFloat = 44.0
         return CGSize(width: w, height: h)
     }
     
@@ -55,6 +49,10 @@ class BasicSectionController: ListSectionController {
     override func didSelectItem(at index: Int) {
         if let action = item?.selectedAction {
             action(index)
+        }
+        if let c = item?.nextControllerClass {
+            let collection = c.init()
+            viewController?.navigationController?.pushViewController(collection, animated: true)
         }
     }
 }
