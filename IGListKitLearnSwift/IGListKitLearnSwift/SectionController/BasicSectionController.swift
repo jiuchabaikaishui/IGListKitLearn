@@ -10,7 +10,7 @@ import UIKit
 import IGListKit
 
 class BasicSectionController: ListSectionController {
-    private var item: BasicItem?
+    var item: BasicItem?
     
     override func sizeForItem(at index: Int) -> CGSize {
         guard let w = collectionContext?.containerSize.width else {
@@ -31,6 +31,7 @@ class BasicSectionController: ListSectionController {
         return cell
     }
     func setBasicCell(item: BasicItem?, cell: BasicCollectionViewCell) {
+        cell.textLabel.text = item?.title
         if let line = item?.line {
             cell.hiddenLine = !line
         } else {
@@ -51,8 +52,11 @@ class BasicSectionController: ListSectionController {
             action(index)
         }
         if let c = item?.nextControllerClass {
-            let collection = c.init()
-            viewController?.navigationController?.pushViewController(collection, animated: true)
+            let nextController = c.init()
+            nextController.title = item?.title
+            viewController?.navigationController?.pushViewController(nextController, animated: true)
         }
+        
+        collectionContext?.deselectItem(at: index, sectionController: self, animated: true)
     }
 }

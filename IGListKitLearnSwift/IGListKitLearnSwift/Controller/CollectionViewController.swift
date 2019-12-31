@@ -10,7 +10,7 @@ import UIKit
 
 class CollectionViewController: BasicViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     // MARK: 属性
-    let cellId = "TextCollectionViewCell" // cell的ID
+    let cellId = "BasicCollectionViewCell" // cell的ID
     let reusableViewId = "TextCollectionReusableView" // cell的ID
     let sectionsCount = 5 // 组数
     let itemsInSectionCount = 18 // 每组元素个数
@@ -36,12 +36,11 @@ class CollectionViewController: BasicViewController, UICollectionViewDelegate, U
         
         return temp
     } ()
-    lazy var randomColor = { UIColor(red: CGFloat(arc4random()%256)/255.0, green: CGFloat(arc4random()%256)/255.0, blue: CGFloat(arc4random()%256)/255.0, alpha: 1) }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView.register(TextCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(BasicCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(TextCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: reusableViewId)
     }
     
@@ -50,11 +49,13 @@ class CollectionViewController: BasicViewController, UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { itemsInSectionCount }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! TextCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? BasicCollectionViewCell else {
+            fatalError()
+        }
         
+        cell.backgroundColor = UIColor.randomColor
         cell.hiddenLine = true
         cell.hiddenNextLabel = true
-        cell.backgroundColor = randomColor()
         cell.textLabel.textAlignment = NSTextAlignment.center
         cell.textLabel.numberOfLines = 0
         cell.textLabel.text = "(\(indexPath.section), \(indexPath.row))"
@@ -63,11 +64,17 @@ class CollectionViewController: BasicViewController, UICollectionViewDelegate, U
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: reusableViewId, for: indexPath) as! TextCollectionReusableView
+        guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: reusableViewId, for: indexPath) as? TextCollectionReusableView else {
+            fatalError()
+        }
         
         view.backgroundColor = .white
         view.textLabel.text = "第\(indexPath.section)组"
         
         return view
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
 }

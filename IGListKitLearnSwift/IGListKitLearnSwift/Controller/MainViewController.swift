@@ -12,20 +12,10 @@ import IGListKit
 
 final class MainViewController: BasicListViewController {
     // MARK: 属性
-    lazy var items: [MainItem] = [
-        MainItem(title: "UICollectionView的使用", selectedAction: { (index) in
-            let item = self.items[index]
-            let collection = CollectionViewController()
-            collection.title = item.title
-            self.navigationController?.pushViewController(collection, animated: true)
-        }),
-        MainItem(title: "尾部加载更多", selectedAction: { (index) in
-            let item = self.items[index]
-            let collection = CollectionViewController()
-            collection.title = item.title
-            self.navigationController?.pushViewController(collection, animated: true)
-        }),
-        MainItem(title: "最后一行", line: false, arrow: false, selectedAction: { (index) in
+    lazy var items: [BasicItem] = [
+        BasicItem(title: "UICollectionView的使用", nextControllerClass: CollectionViewController.self),
+        BasicItem(title: "尾部加载更多", nextControllerClass: LoadMoreViewController.self),
+        BasicItem(title: "最后一行", line: false, arrow: false, selectedAction: { (index) in
             
         })
     ]
@@ -34,7 +24,6 @@ final class MainViewController: BasicListViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "IGListKit"
         adapter.collectionView = collectionView
     }
     
@@ -43,6 +32,6 @@ final class MainViewController: BasicListViewController {
         return items
     }
     override func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return MainSectionController()
+        return BasicSectionController()
     }
 }

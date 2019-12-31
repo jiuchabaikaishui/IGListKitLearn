@@ -11,15 +11,16 @@ import IGListKit
 
 class BasicListViewController: BasicViewController, ListAdapterDataSource {
     // MARK: 属性
-    lazy var adapter: ListAdapter = {
-        let temp = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
-        temp.dataSource = self
-        
-        return temp
-    }()
     lazy var collectionView: UICollectionView = {
         let temp = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
         view.addSubview(temp)
+        
+        return temp
+    }()
+    lazy var adapter: ListAdapter = {
+        let temp = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
+        temp.dataSource = self
+        temp.collectionView = collectionView
         
         return temp
     }()
@@ -28,8 +29,7 @@ class BasicListViewController: BasicViewController, ListAdapterDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "IGListKit"
-        adapter.collectionView = collectionView
+        title = title ?? "IGListKit"
     }
     
     // MARK: ListAdapterDataSource代理

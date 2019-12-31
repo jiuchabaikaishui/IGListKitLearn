@@ -19,13 +19,6 @@ class BasicCollectionViewCell: UICollectionViewCell {
             nextLabel.isHidden = hiddenNextLabel
         }
     }
-    override var isHighlighted: Bool {
-        didSet {
-            if !hiddenNextLabel {
-                contentView.backgroundColor = UIColor(white: isHighlighted ? 0.8 : 1.0, alpha: 1.0)
-            }
-        }
-    }
     
     lazy var lineView = { () -> UIView in
         let view = UIView(frame: CGRect.zero)
@@ -47,6 +40,32 @@ class BasicCollectionViewCell: UICollectionViewCell {
         
         return label
     }()
+    let textLabel: UILabel
+    
+    override init(frame: CGRect) {
+        let label = UILabel(frame: CGRect.zero)
+        textLabel = label
+        
+        super.init(frame: frame)
+        
+        backgroundColor = .white
+        contentView.addSubview(label)
+        let view = UIView()
+        view.backgroundColor = UIColor.lightGray
+        selectedBackgroundView = view
+    }
+    required init?(coder: NSCoder) {
+        let label = UILabel(frame: CGRect.zero)
+        textLabel = label
+        
+        super.init(coder: coder)
+        
+        backgroundColor = .white
+        contentView.addSubview(label)
+        let view = UIView()
+        view.backgroundColor = UIColor.lightGray
+        selectedBackgroundView = view
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -67,6 +86,21 @@ class BasicCollectionViewCell: UICollectionViewCell {
                 } else {
                     make.bottom.equalTo(lineView.snp.top)
                 }
+            }
+        }
+        
+        textLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(contentView).offset(15.0)
+            make.top.equalTo(contentView)
+            if hiddenNextLabel {
+                make.right.equalTo(contentView).offset(-15.0)
+            } else {
+                make.right.equalTo(nextLabel.snp.left).offset(-15.0)
+            }
+            if hiddenLine {
+                make.bottom.equalTo(contentView)
+            } else {
+                make.bottom.equalTo(lineView.snp.top)
             }
         }
     }
