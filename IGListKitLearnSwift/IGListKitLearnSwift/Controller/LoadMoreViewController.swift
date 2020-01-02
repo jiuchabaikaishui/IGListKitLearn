@@ -13,9 +13,9 @@ class LoadMoreViewController: BasicListViewController, UIScrollViewDelegate {
     // MARK: 属性
     private var loading = false
     lazy var items: [ListDiffable] = {
-        var temps = [BasicItem]()
+        var temps = [CommonItem]()
         for index in 0...20 {
-            temps.append(BasicItem(title: "\(index)"))
+            temps.append(CommonItem(title: "\(index)"))
         }
         
         return temps
@@ -29,20 +29,34 @@ class LoadMoreViewController: BasicListViewController, UIScrollViewDelegate {
     }
     
     override func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return items
+        if self.loading {
+            var items = self.items
+            items.append(LoadingItem())
+            
+            return items
+        } else {
+            return items
+        }
+    }
+    override func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
+        if object is CommonItem {
+            return CommonSectionController()
+        } else {
+            return LoadingSectionController()
+        }
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (!self.loading) && scrollView.contentOffset.y + scrollView.bounds.height - scrollView.contentSize.height > 0 {
             self.loading = true;
             self.adapter.performUpdates(animated: true, completion: nil)
             DispatchQueue.global().async {
-                Thread.sleep(forTimeInterval: 2.0)
+                Thread.sleep(forTimeInterval: 4.0)
                 DispatchQueue.main.async {
                     for index in self.items.count..<(self.items.count + 20) {
-                        self.items.append(BasicItem(title: "\(index)"))
-                        self.loading = false
-                        self.adapter.performUpdates(animated: true, completion: nil)
+                        self.items.append(CommonItem(title: "\(index)"))
                     }
+                    self.loading = false
+                    self.adapter.performUpdates(animated: true, completion: nil)
                 }
             }
         }

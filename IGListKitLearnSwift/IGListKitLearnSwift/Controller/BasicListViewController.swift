@@ -37,7 +37,7 @@ class BasicListViewController: BasicViewController, ListAdapterDataSource {
         return [BasicItem]()
     }
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return BasicSectionController()
+        return CommonSectionController()
     }
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
         let label = UILabel(frame: (listAdapter.collectionView?.bounds)!)

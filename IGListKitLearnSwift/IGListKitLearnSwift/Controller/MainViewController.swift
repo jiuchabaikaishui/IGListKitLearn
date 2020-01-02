@@ -12,10 +12,10 @@ import IGListKit
 
 final class MainViewController: BasicListViewController {
     // MARK: 属性
-    lazy var items: [BasicItem] = [
-        BasicItem(title: "UICollectionView的使用", nextControllerClass: CollectionViewController.self),
-        BasicItem(title: "尾部加载更多", nextControllerClass: LoadMoreViewController.self),
-        BasicItem(title: "最后一行", line: false, arrow: false, selectedAction: { (index) in
+    lazy var items: [CommonItem] = [
+        CommonItem(title: "UICollectionView的使用", nextControllerClass: CollectionViewController.self),
+        CommonItem(title: "尾部加载更多", nextControllerClass: LoadMoreViewController.self),
+        CommonItem(title: "最后一行", line: false, arrow: false, selectedAction: { (index) in
             
         })
     ]
@@ -32,6 +32,6 @@ final class MainViewController: BasicListViewController {
         return items
     }
     override func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return BasicSectionController()
+        return CommonSectionController()
     }
 }

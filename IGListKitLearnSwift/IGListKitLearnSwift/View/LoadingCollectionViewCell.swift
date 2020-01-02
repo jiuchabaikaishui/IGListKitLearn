@@ -9,5 +9,18 @@
 import UIKit
 
 class LoadingCollectionViewCell: UICollectionViewCell {
+    lazy var indicatorView: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(style: .gray)
+        self.contentView.addSubview(view)
+        
+        return view
+    }()
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.indicatorView.snp.makeConstraints { (maker) in
+            maker.center.equalTo(self)
+        }
+    }
 }

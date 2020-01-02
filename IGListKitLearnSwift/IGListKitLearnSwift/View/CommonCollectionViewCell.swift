@@ -1,14 +1,14 @@
 //
-//  BasicCollectionViewCell.swift
+//  CommonCollectionViewCell.swift
 //  IGListKitLearnSwift
 //
-//  Created by 苏铮 on 2019/11/1.
-//  Copyright © 2019年 QSP. All rights reserved.
+//  Created by 綦 on 2020/1/2.
+//  Copyright © 2020 QSP. All rights reserved.
 //
 
 import UIKit
 
-class BasicCollectionViewCell: UICollectionViewCell {
+class CommonCollectionViewCell: UICollectionViewCell {
     var hiddenLine: Bool = false {
         didSet {
             lineView.isHidden = hiddenLine

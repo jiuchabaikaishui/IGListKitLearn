@@ -10,7 +10,7 @@ import UIKit
 
 class CollectionViewController: BasicViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     // MARK: 属性
-    let cellId = "BasicCollectionViewCell" // cell的ID
+    let cellId = "CommonCollectionViewCell" // cell的ID
     let reusableViewId = "TextCollectionReusableView" // cell的ID
     let sectionsCount = 5 // 组数
     let itemsInSectionCount = 18 // 每组元素个数
@@ -40,7 +40,7 @@ class CollectionViewController: BasicViewController, UICollectionViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView.register(BasicCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(CommonCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(TextCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: reusableViewId)
     }
     
@@ -49,7 +49,7 @@ class CollectionViewController: BasicViewController, UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { itemsInSectionCount }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? BasicCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? CommonCollectionViewCell else {
             fatalError()
         }
         

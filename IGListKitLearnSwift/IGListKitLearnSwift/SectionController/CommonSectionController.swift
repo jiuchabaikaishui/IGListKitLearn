@@ -1,36 +1,22 @@
 //
-//  BasicSectionController.swift
+//  CommonSectionController.swift
 //  IGListKitLearnSwift
 //
-//  Created by 苏铮 on 2019/11/1.
-//  Copyright © 2019年 QSP. All rights reserved.
+//  Created by 綦 on 2020/1/2.
+//  Copyright © 2020 QSP. All rights reserved.
 //
 
 import UIKit
 import IGListKit
 
-class BasicSectionController: ListSectionController {
-    var item: BasicItem?
+class CommonSectionController: ListSectionController {
+    var item: CommonItem?
     
-    override func sizeForItem(at index: Int) -> CGSize {
-        guard let w = collectionContext?.containerSize.width else {
-            return CGSize(width: 0.0, height: 0.0)
-        }
-        
-        let h: CGFloat = 44.0
-        return CGSize(width: w, height: h)
-    }
-    
-    override func cellForItem(at index: Int) -> UICollectionViewCell {
-        guard let cell = collectionContext?.dequeueReusableCell(of: BasicCollectionViewCell.self, for: self, at: index) as? BasicCollectionViewCell else {
-            fatalError()
-        }
-        
-        setBasicCell(item: item, cell: cell)
-        
-        return cell
-    }
-    func setBasicCell(item: BasicItem?, cell: BasicCollectionViewCell) {
+    /// 设置cell
+    /// - Parameters:
+    ///   - item: 数据模型
+    ///   - cell: cell
+    func settingCell(item: CommonItem?, cell: CommonCollectionViewCell) {
         cell.textLabel.text = item?.title
         if let line = item?.line {
             cell.hiddenLine = !line
@@ -44,8 +30,28 @@ class BasicSectionController: ListSectionController {
         }
     }
     
+    // MARK: 重写IGListSectionController方法
+    override func sizeForItem(at index: Int) -> CGSize {
+        guard let w = collectionContext?.containerSize.width else {
+            return CGSize(width: 0.0, height: 0.0)
+        }
+        
+        let h: CGFloat = 44.0
+        return CGSize(width: w, height: h)
+    }
+    
+    override func cellForItem(at index: Int) -> UICollectionViewCell {
+        guard let cell = collectionContext?.dequeueReusableCell(of: CommonCollectionViewCell.self, for: self, at: index) as? CommonCollectionViewCell else {
+            fatalError()
+        }
+        
+        settingCell(item: item, cell: cell)
+        
+        return cell
+    }
+    
     override func didUpdate(to object: Any) {
-        item = object as? BasicItem
+        item = object as? CommonItem
     }
     override func didSelectItem(at index: Int) {
         if let action = item?.selectedAction {
