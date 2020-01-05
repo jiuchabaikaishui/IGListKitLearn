@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E6128F223BEEBB7006E59D8 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6128F123BEEBB7006E59D8 /* ResultsViewController.swift */; };
+		6E6128F423BEEE2C006E59D8 /* SearchSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6128F323BEEE2C006E59D8 /* SearchSectionController.swift */; };
+		6E6128F623BEEF51006E59D8 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6128F523BEEF51006E59D8 /* SearchCollectionViewCell.swift */; };
+		6E6128F823BEF058006E59D8 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6128F723BEF058006E59D8 /* SearchItem.swift */; };
 		6EA8CF5323BAF4830068E1CC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA8CF5223BAF4830068E1CC /* UIColorExtension.swift */; };
 		6EA8CF5523BB41FB0068E1CC /* LoadMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA8CF5423BB41FB0068E1CC /* LoadMoreViewController.swift */; };
 		6EA8CF5723BB60920068E1CC /* LoadingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA8CF5623BB60920068E1CC /* LoadingCollectionViewCell.swift */; };
@@ -16,6 +20,7 @@
 		6EA8CF7523BDEE7B0068E1CC /* CommonSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA8CF7423BDEE7B0068E1CC /* CommonSectionController.swift */; };
 		6EA8CF7723BDEFEB0068E1CC /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA8CF7623BDEFEA0068E1CC /* BasicViewController.swift */; };
 		6EA8CF7923BDF0E80068E1CC /* LoadingSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA8CF7823BDF0E80068E1CC /* LoadingSectionController.swift */; };
+		6EA8CF7B23BDFB6F0068E1CC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA8CF7A23BDFB6F0068E1CC /* SearchViewController.swift */; };
 		6EFA4C0123B5F02B00943616 /* TextCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFA4C0023B5F02B00943616 /* TextCollectionReusableView.swift */; };
 		944CE7A401C9C110DAF909F5 /* Pods_IGListKitLearnSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE06E607B118F9B8BBF9458 /* Pods_IGListKitLearnSwift.framework */; };
 		ACDD7FBD23697F9800498834 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD7FBC23697F9800498834 /* AppDelegate.swift */; };
@@ -31,6 +36,10 @@
 
 /* Begin PBXFileReference section */
 		5FE06E607B118F9B8BBF9458 /* Pods_IGListKitLearnSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IGListKitLearnSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E6128F123BEEBB7006E59D8 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		6E6128F323BEEE2C006E59D8 /* SearchSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSectionController.swift; sourceTree = "<group>"; };
+		6E6128F523BEEF51006E59D8 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		6E6128F723BEF058006E59D8 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		6EA8CF5223BAF4830068E1CC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		6EA8CF5423BB41FB0068E1CC /* LoadMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreViewController.swift; sourceTree = "<group>"; };
 		6EA8CF5623BB60920068E1CC /* LoadingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -40,6 +49,7 @@
 		6EA8CF7423BDEE7B0068E1CC /* CommonSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonSectionController.swift; sourceTree = "<group>"; };
 		6EA8CF7623BDEFEA0068E1CC /* BasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
 		6EA8CF7823BDF0E80068E1CC /* LoadingSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSectionController.swift; sourceTree = "<group>"; };
+		6EA8CF7A23BDFB6F0068E1CC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		6EFA4C0023B5F02B00943616 /* TextCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionReusableView.swift; sourceTree = "<group>"; };
 		ACDD7FB923697F9800498834 /* IGListKitLearnSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IGListKitLearnSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACDD7FBC23697F9800498834 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +91,7 @@
 			children = (
 				6EA8CF7423BDEE7B0068E1CC /* CommonSectionController.swift */,
 				6EA8CF7823BDF0E80068E1CC /* LoadingSectionController.swift */,
+				6E6128F323BEEE2C006E59D8 /* SearchSectionController.swift */,
 			);
 			path = SectionController;
 			sourceTree = "<group>";
@@ -144,6 +155,7 @@
 				6EA8CF7223BDEC680068E1CC /* CommonCollectionViewCell.swift */,
 				6EFA4C0023B5F02B00943616 /* TextCollectionReusableView.swift */,
 				6EA8CF5623BB60920068E1CC /* LoadingCollectionViewCell.swift */,
+				6E6128F523BEEF51006E59D8 /* SearchCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -156,6 +168,8 @@
 				ACDD7FD2236A714100498834 /* MainViewController.swift */,
 				ACDD8089236C377800498834 /* CollectionViewController.swift */,
 				6EA8CF5423BB41FB0068E1CC /* LoadMoreViewController.swift */,
+				6EA8CF7A23BDFB6F0068E1CC /* SearchViewController.swift */,
+				6E6128F123BEEBB7006E59D8 /* ResultsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -166,6 +180,7 @@
 				ACDD8085236C2A1700498834 /* BasicItem.swift */,
 				6EA8CF7023BDEB190068E1CC /* CommonItem.swift */,
 				6EA8CF6E23BDE9B40068E1CC /* LoadingItem.swift */,
+				6E6128F723BEF058006E59D8 /* SearchItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -293,14 +308,19 @@
 				6EA8CF7923BDF0E80068E1CC /* LoadingSectionController.swift in Sources */,
 				ACDD808A236C377800498834 /* CollectionViewController.swift in Sources */,
 				6EA8CF7723BDEFEB0068E1CC /* BasicViewController.swift in Sources */,
+				6EA8CF7B23BDFB6F0068E1CC /* SearchViewController.swift in Sources */,
+				6E6128F423BEEE2C006E59D8 /* SearchSectionController.swift in Sources */,
 				6EA8CF7123BDEB190068E1CC /* CommonItem.swift in Sources */,
+				6E6128F223BEEBB7006E59D8 /* ResultsViewController.swift in Sources */,
 				6EA8CF5323BAF4830068E1CC /* UIColorExtension.swift in Sources */,
 				ACDD7FBF23697F9800498834 /* ViewController.swift in Sources */,
 				ACDD7FBD23697F9800498834 /* AppDelegate.swift in Sources */,
 				ACDD7FD3236A714100498834 /* MainViewController.swift in Sources */,
 				6EA8CF6F23BDE9B40068E1CC /* LoadingItem.swift in Sources */,
+				6E6128F823BEF058006E59D8 /* SearchItem.swift in Sources */,
 				6EA8CF7323BDEC680068E1CC /* CommonCollectionViewCell.swift in Sources */,
 				6EA8CF5523BB41FB0068E1CC /* LoadMoreViewController.swift in Sources */,
+				6E6128F623BEEF51006E59D8 /* SearchCollectionViewCell.swift in Sources */,
 				ACDD8086236C2A1700498834 /* BasicItem.swift in Sources */,
 				6EA8CF7523BDEE7B0068E1CC /* CommonSectionController.swift in Sources */,
 				6EFA4C0123B5F02B00943616 /* TextCollectionReusableView.swift in Sources */,

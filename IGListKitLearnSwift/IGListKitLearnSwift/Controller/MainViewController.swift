@@ -15,6 +15,7 @@ final class MainViewController: BasicListViewController {
     lazy var items: [CommonItem] = [
         CommonItem(title: "UICollectionView的使用", nextControllerClass: CollectionViewController.self),
         CommonItem(title: "尾部加载更多", nextControllerClass: LoadMoreViewController.self),
+        CommonItem(title: "自动搜索", nextControllerClass: SearchViewController.self),
         CommonItem(title: "最后一行", line: false, arrow: false, selectedAction: { (index) in
             
         })
@@ -24,7 +25,6 @@ final class MainViewController: BasicListViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        adapter.collectionView = collectionView
     }
     
     // MARK: ListAdapterDataSource代理

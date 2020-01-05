@@ -13,12 +13,9 @@ class LoadMoreViewController: BasicListViewController, UIScrollViewDelegate {
     // MARK: 属性
     private var loading = false
     lazy var items: [ListDiffable] = {
-        var temps = [CommonItem]()
-        for index in 0...20 {
-            temps.append(CommonItem(title: "\(index)"))
+        Array(0...20).map { (i) in
+            return CommonItem(title: "\(i)")
         }
-        
-        return temps
     }()
     
     // MARK: 生命周期
@@ -46,15 +43,13 @@ class LoadMoreViewController: BasicListViewController, UIScrollViewDelegate {
         }
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if (!self.loading) && scrollView.contentOffset.y + scrollView.bounds.height - scrollView.contentSize.height > 0 {
+        if (!self.loading) && scrollView.contentOffset.y + scrollView.bounds.height - scrollView.contentSize.height > 0 && scrollView.contentOffset.y > 0 {
             self.loading = true;
             self.adapter.performUpdates(animated: true, completion: nil)
             DispatchQueue.global().async {
                 Thread.sleep(forTimeInterval: 4.0)
                 DispatchQueue.main.async {
-                    for index in self.items.count..<(self.items.count + 20) {
-                        self.items.append(CommonItem(title: "\(index)"))
-                    }
+                    self.items.append(contentsOf: Array(self.items.count..<(self.items.count + 20)).map { CommonItem(title: "\($0)") })
                     self.loading = false
                     self.adapter.performUpdates(animated: true, completion: nil)
                 }

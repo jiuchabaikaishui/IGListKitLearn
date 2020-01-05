@@ -20,7 +20,6 @@ class BasicListViewController: BasicViewController, ListAdapterDataSource {
     lazy var adapter: ListAdapter = {
         let temp = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
         temp.dataSource = self
-        temp.collectionView = collectionView
         
         return temp
     }()
@@ -29,6 +28,7 @@ class BasicListViewController: BasicViewController, ListAdapterDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.adapter.collectionView = self.collectionView
         title = title ?? "IGListKit"
     }
     
@@ -46,5 +46,4 @@ class BasicListViewController: BasicViewController, ListAdapterDataSource {
         
         return label
     }
-    
 }
